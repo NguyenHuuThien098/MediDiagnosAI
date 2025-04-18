@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Tải các biến môi trường từ file .env
+# Tải các biến môi trường từ file .env
 load_dotenv()
 
 # URL của Gemini Healthcare API
@@ -17,6 +18,7 @@ API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-fl
 
 # Lấy API Key từ biến môi trường
 API_KEY = os.getenv("GEMINI_API_KEY")
+logger.info(f"API Key loaded: {'✓' if API_KEY else '✗'}")
 
 def query_gemini_api_for_diagnosis(symptoms, top_diseases, mapped_symptoms):
     """
